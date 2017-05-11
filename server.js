@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const path = require('path');
 const Search = require('./model');
 
 const app = express();
@@ -7,7 +8,15 @@ const app = express();
 const apiKey = process.env.CSE_KEY;
 const cxKey = process.env.CSE_CX;
 
+app.get('/', (req, res) => {
+  res.set('Content-Type', 'text/html');
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+
 app.get('/api/imagesearch/latest', (req, res) => {
+  res.set('Content-Type', 'application/json');
+
   Search.find({}, { _id: 0, __v: 0 }).limit(10).sort({ when: -1 }).exec((err, docs) => {
     if (err || !res) {
       res.json({ message: "It's not you, it's me. . ." });
@@ -17,7 +26,10 @@ app.get('/api/imagesearch/latest', (req, res) => {
   });
 });
 
+
 app.get('/api/imagesearch/:searchterm', (req, res) => {
+  res.set('Content-Type', 'application/json');
+
   const offset = req.query.offset;
   const searchTerm = req.params.searchterm;
   

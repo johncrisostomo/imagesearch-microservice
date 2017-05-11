@@ -1,4 +1,4 @@
-Image Search Abstraction Layer (microservice)
+# Image Search Abstraction Layer (microservice)
 
 ## Endpoints:
 

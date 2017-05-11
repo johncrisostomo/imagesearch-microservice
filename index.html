@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Search Abstraction Layer (microservice)</title>
+</head>
+<body>
+<h1>Image Search Abstraction Layer (microservice)</h1>
+<h2>Endpoints:</h2>
+
+<h3>/api/imagesearch/<em>searchTerm</em>?offset=<em>num</em></h3>
+
+This will return an array of 10 objects with the following keys:
+<ul>
+	<li><code>url</code> - the complete image URL</li>
+	<li><code>snippet</code> - image's description</li>
+	<li><code>thumbnail</code> - image thumbnail</li>
+	<li><code>context</code> - link to the image's origin</li>
+</ul>
+<blockquote>
+Try it out here:
+<a href="https://johncrisostomo-image-search.herokuapp.com/api/imagesearch/kamen%20rider?offset=10">https://johncrisostomo-image-search.herokuapp.com/api/imagesearch/kamen%20rider?offset=10</a>	
+</blockquote>
+
+<h3>/api/imagesearch/latest</h3>
+This endpoint will return an array of the last 10 search terms with the following keys:
+<ul>
+	<li><code>term</code> - the search term</li>
+	<li><code>when</code> - ISO Date</li>
+</ul>
+
+<blockquote>
+Try it out here:
+<a href="https://johncrisostomo-image-search.herokuapp.com/api/imagesearch/latest">https://johncrisostomo-image-search.herokuapp.com/api/imagesearch/latest</a>
+</blockquote>
+
+<h2>created by <a href="https://www.linkedin.com/in/johncrisostomo">john crisostomo</a></h2>
+
+</body>
+</html>
