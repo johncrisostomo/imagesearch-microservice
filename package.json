@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/johncrisostomo/imagesearch-microservice#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.8"
   }
