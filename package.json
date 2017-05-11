@@ -1,0 +1,30 @@
+{
+  "name": "imagesearch-microservice",
+  "version": "1.0.0",
+  "description": "Image Search Abstraction Layer API. Done as part of FCC's backend track",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johncrisostomo/imagesearch-microservice.git"
+  },
+  "keywords": [
+    "api",
+    "image",
+    "search",
+    "api",
+    "microservice"
+  ],
+  "author": "John Crisostomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johncrisostomo/imagesearch-microservice/issues"
+  },
+  "homepage": "https://github.com/johncrisostomo/imagesearch-microservice#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8"
+  }
+}
