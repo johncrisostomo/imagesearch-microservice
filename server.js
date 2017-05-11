@@ -7,6 +7,16 @@ const app = express();
 const apiKey = process.env.CSE_KEY;
 const cxKey = process.env.CSE_CX;
 
+app.get('/api/imagesearch/latest', (req, res) => {
+  Search.find({}, { _id: 0, __v: 0 }).limit(10).sort({ when: -1 }).exec((err, docs) => {
+    if (err || !res) {
+      res.json({ message: "It's not you, it's me. . ." });
+    }
+
+    res.json(docs);
+  });
+});
+
 app.get('/api/imagesearch/:searchterm', (req, res) => {
   const offset = req.query.offset;
   const searchTerm = req.params.searchterm;
