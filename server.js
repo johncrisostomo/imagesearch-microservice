@@ -10,6 +10,10 @@ const cxKey = process.env.CSE_CX;
 app.get('/api/imagesearch/:searchterm', (req, res) => {
   const offset = req.query.offset;
   const searchTerm = req.params.searchterm;
+  
+  // save the current search term to the database
+  const search = new Search({ term: searchTerm });
+  search.save();
 
   const requestUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cxKey}&q=${searchTerm}&searchType=image&start=${offset}`;
   
@@ -18,7 +22,7 @@ app.get('/api/imagesearch/:searchterm', (req, res) => {
       let newItem = {};
       newItem.url = item.link;
       newItem.snippet = item.snippet;
-      newItem.thumbnail = item.thumbnailLink;
+      newItem.thumbnail = item.image.thumbnailLink;
       newItem.context = item.image.contextLink;
 
       return newItem;
